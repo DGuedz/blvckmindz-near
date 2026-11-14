@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="description" content="Split a sample streaming payment between a track's contributors. Run it on NEAR testnet and verify each transfer." />
+<title>Music income · BLVCK MINDZ × NEAR testnet</title>
+<link rel="stylesheet" href="/demo.css" />
+<link rel="stylesheet" href="/engine-motion.css" />
+</head>
+<body>
+<main>
+  <a class="skip" href="#engineTitle">Skip to the participant sheet</a>
+  <header class="masthead"><a class="brand" href="#"><img src="/assets/logo.svg" alt="BLVCK MINDZ" /><span>BLVCK MINDZ</span></a><small>Built for NEAR HACKATHON<br>Real-World Money · Testnet</small></header>
+  <div class="hero"><div><span class="eyebrow">Music payment operations</span><h1>Streaming income.<br>Shared as agreed.</h1></div><div><p class="lede" id="caseIntro">One song’s payment, shared by the label, artist and producer.</p><p class="foot">Try a prefilled streaming-statement sample.<br>Test tokens on NEAR. No wallet setup.</p></div></div>
+  <nav aria-label="Evaluation path"><a href="#engineTitle">Try the split</a><a href="#recordedCase">Check the payment</a><a href="#revenueModel">How music rights fit</a></nav>
+
+  <section class="card engine-card" aria-labelledby="engineTitle">
+    <div class="engine-intro"><span class="section-number">01 / One track · sample agreement</span><h2 id="engineTitle">Split a payment.</h2><div class="presets"><button id="masterPreset" type="button" aria-pressed="true">Recording</button><button id="authorPreset" type="button" aria-pressed="false">Songwriting</button></div></div>
+    <div class="engine-layout"><div class="engine-input">
+    <form id="engineForm">
+      <input id="engineTerms" type="hidden" value="master" />
+      <label><span id="codeLabel">Recording ID (ISRC)</span><input id="templateCode" value="PYXXX2600001" readonly aria-describedby="templateHint" /></label>
+      <p id="templateHint" class="hint">Identifies the recording. The agreement sets the shares.</p>
+      <label>Payment to allocate · test USDC<input id="engineAmount" value="2.00" maxlength="32" inputmode="decimal" /></label>
+      <details id="engineInspector"><summary>Participants &amp; agreement</summary>
+        <p id="sheetDescription">Label · performer · music producer</p>
+        <p class="row"><label><span id="firstRole">Artist</span> · % of contributor pool<input id="engineA" value="70" maxlength="6" inputmode="decimal" /></label><label><span id="secondRole">Beatmaker</span> · % of contributor pool<input id="engineB" value="30" maxlength="6" inputmode="decimal" /></label></p>
+        <p class="hint">The label’s sample allocation is 40%; the remaining 60% follows these contributor weights. The publishing sample uses a 25% allocation.</p>
+      </details>
+      <div class="run-actions"><button id="runSample" type="submit">Simulate split</button><button id="resetSample" class="secondary" type="button">Reset</button></div>
+    </form>
+    <p id="engineRunStatus" class="foot" role="status" aria-live="polite">Local calculation. No tokens moved.</p>
+    <button id="liveRun" type="button" disabled>Distribute on testnet</button>
+    <p id="liveMode" class="foot">Testnet execution requires the new demo deployment.</p>
+    <button id="lastRunButton" class="text-action" type="button" hidden>View last testnet receipt ↗</button>
+    <div id="runRecovery" class="run-recovery" hidden><p id="recoveryMessage" role="status" aria-live="polite"></p><code id="recoveryId"></code><div class="recovery-actions"><button id="resumeRun" type="button" hidden>Check this payment</button><button id="retryRun" type="button" hidden>Start the saved request</button><button id="leaveMissingRun" class="secondary" type="button" hidden>Return to template</button></div></div>
+    </div><div class="engine-output">
+      <section id="engineMotion" class="split-motion" aria-label="Payment engine" data-mode="ready" data-complete="false">
+        <div class="motion-top"><span data-motion="mode">Ready to run</span><span data-motion="position">01 / 04</span></div>
+        <div class="motion-caption" role="status" aria-live="polite"><h3 data-motion="title">Follow the payment.</h3><p data-motion="description">Start with a simulation. Then run a real testnet distribution.</p></div>
+        <div class="motor-board" aria-label="One invoice passes through the split engine to three recipients">
+          <svg class="motor-routes" viewBox="0 0 480 300" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path class="route-bed" d="M240 81 V130"/><path class="route-fill inlet" d="M240 81 V130" pathLength="1"/>
+            <path class="route-bed" d="M240 173 V185 C240 205 75 185 75 229"/><path class="route-bed" d="M240 173 V229"/><path class="route-bed" d="M240 173 V185 C240 205 405 185 405 229"/>
+            <g class="branch" style="--progress:var(--branch-0,0)"><path class="route-fill" d="M240 173 V185 C240 205 75 185 75 229" pathLength="1"/><path class="route-packet" d="M240 173 V185 C240 205 75 185 75 229" pathLength="1"/></g>
+            <g class="branch" style="--progress:var(--branch-1,0)"><path class="route-fill" d="M240 173 V229" pathLength="1"/><path class="route-packet" d="M240 173 V229" pathLength="1"/></g>
+            <g class="branch" style="--progress:var(--branch-2,0)"><path class="route-fill" d="M240 173 V185 C240 205 405 185 405 229" pathLength="1"/><path class="route-packet" d="M240 173 V185 C240 205 405 185 405 229" pathLength="1"/></g>
+          </svg>
+          <div class="motor-invoice"><span class="motor-coin" data-motion="coin" aria-hidden="true"></span><div><span class="invoice-label">Payment to allocate</span><strong><span data-motion="amount">2.00</span> <small>TEST USDC</small></strong><code data-motion="code">ISRC · PYXXX2600001</code></div></div>
+          <div class="motor-core"><div><b data-motion="motor-label">Agreed shares</b><span data-motion="agreement">Label · artist · producer</span><small data-motion="formula">One agreement, applied to every payment.</small></div></div>
+          <div class="motor-recipients">
+            <div class="motor-recipient" data-recipient="0"><span data-role>Label</span><small data-share>—</small><strong data-cash>—</strong><em data-cash-label>Expected</em></div>
+            <div class="motor-recipient" data-recipient="1"><span data-role>Artist</span><small data-share>—</small><strong data-cash>—</strong><em data-cash-label>Expected</em></div>
+            <div class="motor-recipient" data-recipient="2"><span data-role>Beatmaker</span><small data-share>—</small><strong data-cash>—</strong><em data-cash-label>Expected</em></div>
+          </div>
+        </div>
+        <ol class="motion-steps" data-motion="steps" aria-label="Payment stages"></ol>
+        <div class="motion-receipt" data-motion="receipt" hidden><span data-motion="receipt-status"></span><b data-motion="receipt-value"></b></div>
+        <div class="motion-transaction" data-motion="tx" hidden><a data-motion="tx-link" target="_blank" rel="noopener"></a><code data-motion="hash"></code><a id="networkJump" class="network-jump" href="#networkPortal">Interoperability · network scope ↗</a></div>
+        <div class="motion-bottom"><p data-motion="note">Simulation explains the split. Testnet provides the proof.</p><div><button data-motion="pause" type="button" hidden>Pause</button><button data-motion="replay" type="button" hidden>Replay</button></div></div>
+      </section>
+      <div id="journeyNext" class="journey-next" hidden><button id="continueToTestnet" type="button">Distribute this split on testnet →</button><p id="journeyHint"></p></div>
+      <details id="calculationDetails" hidden><summary>Inspect the allocation &amp; rounding</summary><div id="engineResult"></div></details>
+    </div></div>
+  </section>
+
+
+  <div class="section-heading"><span class="section-number">02 / NEAR testnet evidence</span><h2 id="recordedCase">Check the payment.</h2><p>Expected amounts beside the amounts recorded on NEAR.</p></div>
+  <p class="recorded-proof-link"><a href="/provas" target="_blank" rel="noopener">Open the recorded test payment ↗</a><span>Earlier execution · available without starting a new test.</span></p>
+  <details id="liveReceiptCard" class="card" hidden aria-labelledby="liveReceiptTitle"><summary>Inspect this run’s transfer events</summary><h2 id="liveReceiptTitle">This testnet run</h2><p id="liveRunStatus" role="status" aria-live="polite"></p><div id="liveRunResult"></div></details>
+  <section class="card" id="historicalProofCard" aria-label="Verify recorded transfers">
+    <div class="proof-actions"><label>Recorded example<select id="proofBatch"><option value="m1">Recording · 2.00 test USDC</option><option value="e1">Composition · 1.00 test USDC</option></select></label><button id="verifyTransfers" type="button">Check testnet transfers</button><a href="/provas" target="_blank" rel="noopener">Full evidence report ↗</a></div>
+    <p id="proofStatus" role="status" aria-live="polite">Public transaction data. No wallet needed.</p><div id="proofResult" style="overflow-x:auto"></div>
+    <p class="foot evidence-note">Recorded testnet payment · test tokens have no monetary value. See the build report for source/deployment correspondence.</p>
+  </section>
+  <details class="card" id="revenueModel">
+    <summary>One track. Five revenue flows.</summary>
+    <p>The recording and the composition have distinct identifiers and agreements. Each flow has its own source and allocation; they are not five slices of one invoice.</p>
+    <div style="overflow-x:auto"><table><caption>BLVCK MINDZ prototype template · sample terms</caption><thead><tr><th>Revenue flow</th><th>Identifier</th><th>Prototype treatment</th></tr></thead><tbody>
+      <tr><td>Master</td><td>ISRC · recording</td><td>Label share + artists’ side. Main invoice example: 2.00 test USDC.</td></tr>
+      <tr><td>Producer neighboring right</td><td>ISRC · recording</td><td>Assigned to the label in this sample model. No invoice demonstrated for this flow.</td></tr>
+      <tr><td>Performer neighboring right</td><td>ISRC · recording</td><td>Informational only. External collection/payment is not implemented or verified here.</td></tr>
+      <tr><td>Publishing: performance</td><td>ISWC · composition</td><td>Publisher share + writers’ side. Additional example: 1.00 test USDC.</td></tr>
+      <tr><td>Publishing: mechanical</td><td>ISWC · composition</td><td>Publisher share + writers’ side. No invoice demonstrated for this flow.</td></tr>
+    </tbody></table></div>
+    <p class="foot">A code identifies a recording or composition; it does not establish ownership. Real allocations and collection routes require verified agreements and applicable territory/mandates. The prototype does not collect from distributors or societies.</p>
+  </details>
+
+  <details class="card" id="networkPortal">
+    <summary>Interoperability</summary>
+    <div class="network-grid">
+      <article><span class="section-number">NEAR · testnet</span><h3>This payment</h3><p id="nearNetworkStatus">Run a test payment to attach its verified receipt here.</p><a id="nearNetworkLink" target="_blank" rel="noopener" hidden>Open this NEAR payment ↗</a></article>
+      <article><span class="section-number">Solana · devnet</span><h3>Earlier payment demo</h3><p id="solanaNetworkStatus">Open to load the rechecked reference.</p><a id="solanaNetworkLink" target="_blank" rel="noopener" hidden>Open the earlier Solana payment ↗</a></article>
+    </div>
+    <p class="foot">Independent test payments on two networks. Cross-chain settlement is planned.</p>
+  </details>
+
+
+  <details class="data-details"><summary>Inspect the registered rights, confirmations and batch history</summary>
+  <div class="card">
+    <form class="row" id="search">
+      <label>ISRC or ISWC <input id="isrc" value="PYXXX2600001" size="14" /></label>
+      <label>Right <select id="rightScope"><option value="master">Master (recording)</option><option value="publishing_performance">Publishing: performance</option><option value="publishing_mechanical">Publishing: mechanical</option><option value="neighboring_producer">Producer neighboring right</option><option value="all">All rights</option></select></label>
+      <button id="load" type="submit">View track</button>
+      <span id="acc" class="mono" style="color:var(--muted)"></span>
+    </form>
+    <p class="row"><button id="sampleRecording" type="button">Sample recording</button><button id="sampleWork" type="button">Sample composition</button></p>
+    <p id="feedback" role="status" aria-live="polite"></p>
+  </div>
+
+  <div class="card" id="personalCard" hidden>
+    <h3 style="margin-top:0">View a participant's shares</h3>
+    <label for="participant">Participant</label>
+    <select id="participant"></select>
+    <div id="personal" aria-live="polite"></div>
+    <p class="foot">Public testnet preview. Selecting a participant does not sign you in or confirm a share. Email sign-in is not active in this demo.</p>
+  </div>
+
+  <div class="card"><h3 style="margin-top:0">Rights and shares</h3><div id="track" class="wait">—</div></div>
+  <div class="card"><h3 style="margin-top:0">Invoices</h3><div id="batches" class="wait">—</div></div>
+  <section class="card trace-card" id="traceCard" hidden aria-labelledby="traceTitle"><h2 id="traceTitle">Inspect how this payment works</h2><div id="trace"></div></section>
+  <div class="card" id="receiptCard" hidden><h3 style="margin-top:0">Distribution reference</h3><p>Derived from the batch state, not a verified receipt. Check the receipt event and individual token transfers in the explorer.</p><div id="receipt"></div></div>
+
+  </details>
+  <footer>BLVCK MINDZ × NEAR · Testnet prototype.<details><summary>Prototype scope</summary><p>“Test USDC” is a project-issued token, not Circle USDC; it has no monetary value.</p><p>Email sign-in and browser signing are not active. Registry ownership and operator approvals remain with the label. External society registrations are not submitted by this demo.</p></details></footer>
+</main>
+<script type="module" src="/demo.mjs"></script>
+</body>
+</html>

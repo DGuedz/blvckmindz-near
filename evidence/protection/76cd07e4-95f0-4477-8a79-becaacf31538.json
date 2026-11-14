@@ -1,0 +1,32 @@
+{
+  "network": "testnet",
+  "contract": "rights.bmz-718c08dd.testnet",
+  "assetContract": "usdc.bmz-718c08dd.testnet",
+  "batchId": "demo-76cd07e495f044778a79becaacf31538",
+  "tx": "E1kifDT6A77refDqUcxMNexdu5ooUvNy1m2HWqiL6Y3t",
+  "signer": "bmz-718c08dd.testnet",
+  "originalPayoutTx": "7PcqjVbV9qbAbVucrvvwDNTZVNwCrNnY2vdCe7uXPcLW",
+  "originalRequestId": "76cd07e4-95f0-4477-8a79-becaacf31538",
+  "verification": {
+    "matched": true,
+    "checks": {
+      "transaction": true,
+      "receiver": true,
+      "action": true,
+      "arguments": true,
+      "zeroDeposit": true,
+      "finalized": true,
+      "configuredToken": true,
+      "batchPaid": true,
+      "expectedPanic": true,
+      "eventIntegrity": true,
+      "noTransfers": true,
+      "noReceipt": true
+    },
+    "tx": "E1kifDT6A77refDqUcxMNexdu5ooUvNy1m2HWqiL6Y3t",
+    "contract": "rights.bmz-718c08dd.testnet",
+    "batchId": "demo-76cd07e495f044778a79becaacf31538",
+    "checkedAt": "2026-11-14T19:08:16.896Z",
+    "panic": "lote não aprovado ou já pago"
+  }
+}

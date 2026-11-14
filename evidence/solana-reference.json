@@ -1,0 +1,79 @@
+{
+  "chain": "solana",
+  "network": "devnet",
+  "testTokens": true,
+  "signature": "3KE4f6kpxDp9dWYcEz2uDHApKjka2fKSwSjgne6k7sVNdrfhzptXjEXHZhHVNM9SCzfRKdMUct4APh9SsG6QJaBk",
+  "program": "Cgws98fLCjKyCiXFuCmiBdxQpMU2FqBMNTNLh1yBWwiY",
+  "mint": "Ahubo1MAKae2EAWgfivW6LdL3ZEe2esBwfLXQe5QrzRw",
+  "explorer": "https://explorer.solana.com/tx/3KE4f6kpxDp9dWYcEz2uDHApKjka2fKSwSjgne6k7sVNdrfhzptXjEXHZhHVNM9SCzfRKdMUct4APh9SsG6QJaBk?cluster=devnet",
+  "recordedAt": "2026-10-13T01:59:02.440Z",
+  "scope": "Historical independent Solana devnet payment. Not created by the current NEAR session and not linked to its invoice, ledger or settlement. Test tokens only.",
+  "terms": {
+    "kind": "historical test allocation",
+    "allocationBps": [
+      {
+        "role": "Label",
+        "bps": 5000
+      },
+      {
+        "role": "Artist",
+        "bps": 3500
+      },
+      {
+        "role": "Beatmaker",
+        "bps": 1500
+      }
+    ],
+    "recordedTotalMicroUnits": "2000000",
+    "recordedRecipientAmountsMicroUnits": [
+      "1000000",
+      "700000",
+      "300000"
+    ],
+    "source": "Allocation shown by the previously published apps/web/public/evidence/historical-devnet.json token deltas, recorded 2026-10-13. It is not the current NEAR agreement or evidence of a legal contract."
+  },
+  "liveCheck": {
+    "checkedAt": "2026-11-14T17:53:20.025Z",
+    "available": true,
+    "source": "https://api.devnet.solana.com",
+    "methods": [
+      "getTransaction",
+      "getSignatureStatuses"
+    ],
+    "transactionAvailable": true,
+    "signatureStatusAvailable": true,
+    "matched": true,
+    "slot": 510013602,
+    "confirmationStatus": "finalized",
+    "checks": {
+      "successful": true,
+      "expectedProgramInvoked": true,
+      "exactTokenChanges": true,
+      "tokenChangesConserved": true,
+      "noUnexpectedTokenChanges": true,
+      "finalized": true
+    },
+    "observedChanges": [
+      {
+        "key": "source",
+        "tokenAccount": "24M5MH5qLKRCyh5enXYdurGATpSrJpXFYuSriFEwmqpm",
+        "deltaMicroUnits": "-2000000"
+      },
+      {
+        "key": "eas",
+        "tokenAccount": "Cgmn3kcsWiyh1atpNCb2EEhxcWztUNenRWvbGpztdrSK",
+        "deltaMicroUnits": "1000000"
+      },
+      {
+        "key": "mc",
+        "tokenAccount": "4WpSq2ghRNZ4xbbaeJCumRZERE74FZezFJUpbxq1iNt6",
+        "deltaMicroUnits": "700000"
+      },
+      {
+        "key": "beatmaker",
+        "tokenAccount": "DWUMbGfHDMXaLjgVj29VuiKfaCAEikRWAKRpkFwmykXy",
+        "deltaMicroUnits": "300000"
+      }
+    ]
+  }
+}

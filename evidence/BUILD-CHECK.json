@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-14T18:01:35.938Z",
+  "network": "testnet",
+  "contract": "rights.bmz-718c08dd.testnet",
+  "block_height": 277691196,
+  "local_wasm_sha256": "d56d8cbb4195d28ab3299980d62e6b47dc0e9ef707525be81298b1d8f1f7da08",
+  "deployed_wasm_sha256": "d56d8cbb4195d28ab3299980d62e6b47dc0e9ef707525be81298b1d8f1f7da08",
+  "matches": true,
+  "contracts": [
+    {
+      "account_id": "rights.bmz-718c08dd.testnet",
+      "block_height": 277691196,
+      "local_wasm_sha256": "d56d8cbb4195d28ab3299980d62e6b47dc0e9ef707525be81298b1d8f1f7da08",
+      "deployed_wasm_sha256": "d56d8cbb4195d28ab3299980d62e6b47dc0e9ef707525be81298b1d8f1f7da08",
+      "matches": true
+    },
+    {
+      "account_id": "usdc.bmz-718c08dd.testnet",
+      "block_height": 277691197,
+      "local_wasm_sha256": "db89014e71760b88a3e5c55690a3ea58f1fed37034a08a44c9b4c6e3b44cb21a",
+      "deployed_wasm_sha256": "db89014e71760b88a3e5c55690a3ea58f1fed37034a08a44c9b4c6e3b44cb21a",
+      "matches": true
+    }
+  ]
+}

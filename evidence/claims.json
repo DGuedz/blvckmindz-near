@@ -1,0 +1,82 @@
+{
+  "_about": "Gerado pela demo: cada afirmação ligada à transação que a prova. Conferido por app/verify.mjs. Testnet, dados de amostra.",
+  "network": "testnet",
+  "contract": "rights.bmz-718c08dd.testnet",
+  "label": "bmz-718c08dd.testnet",
+  "claims": [
+    {
+      "id": "terms",
+      "claim": "O selo publicou o contrato-modelo de TESTE (master D=40%, autoral D=25%)",
+      "tx": "BgfMNUG9TPbXGb9kvYtAndWNDE4G4r5xhCiJDeHZB7Pb",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "terms_published"
+      }
+    },
+    {
+      "id": "register_work",
+      "claim": "A composição (ISWC) foi registrada e virou dois tokens autorais",
+      "tx": "FBFiPuzUTYcWU4AaKDnXTxNNbrR8Zsia9k3fSbJssMAR",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "nft_mint"
+      }
+    },
+    {
+      "id": "register",
+      "claim": "A gravação (ISRC) foi registrada e virou dois tokens (master e conexo de produtor)",
+      "tx": "5oCWLDyR6PbAGt7nspbBX8D3ULkLLsDLp2NqnBtU4H4T",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "nft_mint"
+      }
+    },
+    {
+      "id": "confirm_mc_iswc",
+      "claim": "O MC confirmou a composição e o gas foi pago pelo selo",
+      "tx": "CZNJUgsbTLQUAfH4Z1GfdLvAbTUMzQVUD9SYU6UPVQqk",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "mc.bmz-718c08dd.testnet"
+      }
+    },
+    {
+      "id": "confirm_mc_isrc",
+      "claim": "O MC confirmou a gravação e o gas foi pago pelo selo",
+      "tx": "FGpCd4YgKV1Mcipu8C1x79CMRaxBUv8sTQ9czjEyoe2r",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "mc.bmz-718c08dd.testnet"
+      }
+    },
+    {
+      "id": "confirm_beat_iswc",
+      "claim": "O beatmaker confirmou a composição e o gas foi pago pelo selo",
+      "tx": "EXrQrcKZPdh5FN8xBMnnANsThQCxh9AW2vpisYWFAeMJ",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "beat.bmz-718c08dd.testnet"
+      }
+    },
+    {
+      "id": "confirm_beat_isrc",
+      "claim": "O beatmaker confirmou a gravação e o gas foi pago pelo selo",
+      "tx": "Hvh9yc2RUwzYvQKgzz7TWwk7v9HepR6gqUiKUHu3KLvX",
+      "signer": "bmz-718c08dd.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "beat.bmz-718c08dd.testnet"
+      }
+    }
+  ]
+}

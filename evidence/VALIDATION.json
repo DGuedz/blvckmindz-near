@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-14",
+  "network": "testnet",
+  "scope": "Fixed-sample demo journey, payment proof, recovery, concurrency, HTTP policy and responsive UI",
+  "applicationTests": {
+    "command": "cd app && npm test",
+    "passed": 104,
+    "failed": 0
+  },
+  "localStress": {
+    "deterministicSheets": 1000,
+    "sameRequestConcurrentRetries": 50,
+    "networkTransactions": 0
+  },
+  "browserWidthsChecked": [
+    320,
+    1280
+  ],
+  "publicDemo": "https://blvckmindz-near-demo.vercel.app/",
+  "requestId": "90adb516-89b8-4662-98c2-5993fc39d62c",
+  "payoutTx": "DphFTW1XiokxpqEvUcUATWvkgBvtxqa35CfdbbJ6VvFk",
+  "duplicateRejectedTx": "E1kifDT6A77refDqUcxMNexdu5ooUvNy1m2HWqiL6Y3t",
+  "paymentReport": "live-runs/90adb516-89b8-4662-98c2-5993fc39d62c.json",
+  "rejectionReport": "protection/76cd07e4-95f0-4477-8a79-becaacf31538.json",
+  "buildReport": "BUILD-CHECK.json",
+  "rustSourceChangedInThisReview": false,
+  "rustTestsRerunInThisReview": false,
+  "crossChainSettlementImplemented": false,
+  "commercialSettlementProven": false,
+  "staticUiIndependentOfOperatorMac": true,
+  "duplicateRejectedOriginalRequestId": "76cd07e4-95f0-4477-8a79-becaacf31538"
+}

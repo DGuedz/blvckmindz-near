@@ -1,0 +1,26 @@
+{
+  "name": "blvckmindz-near-app",
+  "version": "1.0.0",
+  "description": "Demo scripts, gasless relayer and invoice page for track-account (NEAR testnet).",
+  "scripts": {
+    "build": "cd ../contracts/track-account && cargo near build non-reproducible-wasm && cd ../test-usdc && cargo near build non-reproducible-wasm",
+    "setup": "node setup.mjs",
+    "demo": "node demo.mjs",
+    "serve": "node serve.mjs",
+    "test": "node --test test/*.test.mjs",
+    "redeploy": "node redeploy.mjs",
+    "setup:v2": "node setup-v2.mjs",
+    "demo:v1": "node demo-v1.mjs",
+    "verify": "node verify.mjs",
+    "verify:build": "node verify-build.mjs",
+    "verify:live": "node verify-live-run.mjs",
+    "attacks": "node attacks.mjs",
+    "readme": "node readme-evidence.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "near-api-js": "7.5.3"
+  },
+  "private": true,
+  "type": "module"
+}

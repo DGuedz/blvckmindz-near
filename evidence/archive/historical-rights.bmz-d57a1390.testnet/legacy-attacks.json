@@ -1,0 +1,103 @@
+{
+  "attacks": [
+    {
+      "id": "stranger_confirm",
+      "claim": "Uma conta fora da ficha tenta confirmar uma parte",
+      "tx": "Ho2tpYU54HF5KRBFioumuZbRLg6dd6LReSfLf2GjZjqB",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "nada a confirmar"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "not_label_register",
+      "claim": "A distribuidora tenta registrar uma gravação",
+      "tx": "4zyLdRDXD7Z2MQidtYoB31gi7M7FoVhkMmmwYQFqNg41",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "só o selo"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "terms_rewrite",
+      "claim": "O selo tenta reescrever o contrato-modelo publicado",
+      "tx": "7UGGUy4mbSL63WXffrXCvVJCQUNnS2YDQtnqFPVjRZiF",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "versão já publicada"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "double_payout",
+      "claim": "Alguém tenta pagar de novo o lote m1, já repassado",
+      "tx": "CKA5T2EwUtNeKTCQ2g3LssfpvW1oCKWeyWDrmsiUgea9",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "lote não aprovado ou já pago"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "fake_token",
+      "claim": "Uma conta finge ser o USDC para criar uma fatura sem dinheiro",
+      "tx": "8juk4tvjJkkBxNst2phnBFCAusD3S6xULtZERcwqkRgr",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "token não aceito"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "payout_before_gate",
+      "claim": "Alguém tenta pagar o lote a1 antes do portão",
+      "tx": "9Ey8BuviNojeGqnNjs2bhJzk7Lde92NTFUeB3gy6JqG7",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "lote não aprovado ou já pago"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "non_gate_approves",
+      "claim": "Uma conta que não é o portão tenta aprovar o lote a1",
+      "tx": "7HJ1Va2ugducmDkGqYEKK8oDqdZh7YbifrpWUkBL5tjk",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "só o portão ou o selo"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "wrong_hash",
+      "claim": "O portão tenta aprovar o lote a1 com outro hash",
+      "tx": "GeuWYabjMouBwBCETX25p8AUGJY7RkmiFPLoKi9mm9jY",
+      "signer": "gate.bmz-d57a1390.testnet",
+      "expect": {
+        "success": false,
+        "panic": "hash diferente do lote recebido"
+      },
+      "result": "recusado"
+    },
+    {
+      "id": "refund_unknown_right",
+      "claim": "Fatura para um direito inexistente: o pagador recebe tudo de volta",
+      "tx": "Cc7VDLnfBeZ1Cssz6GC4Es7XPXweGaAK1QGSNcdLMd1P",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "refund": true,
+        "panic": "direito não existe"
+      },
+      "result": "devolvido"
+    }
+  ]
+}

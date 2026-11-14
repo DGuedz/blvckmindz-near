@@ -1,0 +1,50 @@
+{
+  "source": "live-demo",
+  "checked_at": "2026-11-14T22:46:28.341Z",
+  "contract": "rights.bmz-718c08dd.testnet",
+  "run_id": "90adb516-89b8-4662-98c2-5993fc39d62c",
+  "report": {
+    "checkedAt": "2026-11-14T22:46:28.341Z",
+    "contract": "rights.bmz-718c08dd.testnet",
+    "assetContract": "usdc.bmz-718c08dd.testnet",
+    "batchId": "demo-90adb51689b8466298c25993fc39d62c",
+    "tokenId": "PYXXX2600001:master",
+    "block": 277720504,
+    "tx": "DphFTW1XiokxpqEvUcUATWvkgBvtxqa35CfdbbJ6VvFk",
+    "amount": "2000000",
+    "rows": [
+      {
+        "account": "bmz-718c08dd.testnet",
+        "role": "selo (EAS)",
+        "bps": 4000,
+        "expected": "800000",
+        "actual": "800000",
+        "matched": true
+      },
+      {
+        "account": "mc.bmz-718c08dd.testnet",
+        "role": "intérprete",
+        "bps": 4200,
+        "expected": "840000",
+        "actual": "840000",
+        "matched": true
+      },
+      {
+        "account": "beat.bmz-718c08dd.testnet",
+        "role": "produtor musical",
+        "bps": 1800,
+        "expected": "360000",
+        "actual": "360000",
+        "matched": true
+      }
+    ],
+    "checks": {
+      "transaction": true,
+      "receipt": true,
+      "amounts": true,
+      "total": true,
+      "recipients": true
+    },
+    "matched": true
+  }
+}

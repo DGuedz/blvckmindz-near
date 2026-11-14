@@ -1,0 +1,20 @@
+import { readFileSync } from 'node:fs';
+import { verifyPayment } from './payment-proof.mjs';
+import { RPC_URL, view, batchSummary } from './lib.mjs';
+import { SAMPLE_TEMPLATES } from './templates.mjs';
+
+const path=process.argv[2];
+if(!path)throw new Error('Pass a public evidence/live-runs/<request-id>.json file.');
+const run=JSON.parse(readFileSync(path,'utf8'));
+if(run.network!=='testnet'||!Object.hasOwn(SAMPLE_TEMPLATES,run.template)||!run.proof?.contract?.endsWith('.testnet'))throw new Error('Not a supported testnet run report.');
+const template=SAMPLE_TEMPLATES[run.template];
+const ledger=run.ledger.map(row=>({...row,amount:BigInt(row.amount)}));
+const summary=batchSummary(ledger,run.batchId,template.code,template.right);
+const batch=await view(run.proof.contract,'get_batch',{batch_id:run.batchId});
+if(summary.ledgerHash!==run.ledgerHash||batch.ledger_hash!==summary.ledgerHash||BigInt(batch.amount)!==summary.amount)throw new Error('Ledger or invoice mismatch.');
+const payout=run.txs.find(tx=>tx.step==='distributing');
+if(!payout)throw new Error('No payout transaction in this run.');
+const evidence={contract:run.proof.contract,claims:[{id:`pay_out_${run.batchId}`,tx:payout.hash,signer:payout.signer,expect:{batch:run.batchId}}]};
+const report=await verifyPayment({evidence,batchId:run.batchId,rpcUrl:RPC_URL,transactionRpcUrl:process.env.NEAR_ARCHIVAL_RPC_URL??'https://archival-rpc.testnet.near.org'});
+console.log(JSON.stringify({batch:run.batchId,ledgerMatched:true,...report},null,2));
+if(!report.matched)process.exitCode=1;

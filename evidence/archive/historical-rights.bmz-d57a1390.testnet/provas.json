@@ -1,0 +1,293 @@
+{
+  "checked_at": "2026-11-14T09:53:06.732Z",
+  "final_block": 277640996,
+  "rpc": "https://test.rpc.fastnear.com",
+  "contract": "rights.bmz-d57a1390.testnet",
+  "passed": 43,
+  "failed": 0,
+  "results": [
+    {
+      "group": "transações",
+      "name": "O selo publicou o contrato-modelo de TESTE (master D=40%, autoral D=25%)",
+      "ok": true,
+      "detail": "terms_published",
+      "link": "https://testnet.nearblocks.io/txns/Ezwfp63Wo9qPMHamiLE985rCqoRwq3DSpeFiTnYDpB23"
+    },
+    {
+      "group": "transações",
+      "name": "A composição (ISWC) foi registrada e virou dois tokens autorais",
+      "ok": true,
+      "detail": "nft_mint",
+      "link": "https://testnet.nearblocks.io/txns/BujB6D9KxH9rHqHgjMF1E1vmLR6gyCPmb8LTi5CjvS5a"
+    },
+    {
+      "group": "transações",
+      "name": "A gravação (ISRC) foi registrada e virou dois tokens (master e conexo de produtor)",
+      "ok": true,
+      "detail": "nft_mint",
+      "link": "https://testnet.nearblocks.io/txns/BeQjjTmJ1ovTBGyxL2dTyqdBpbCfSBintg72v3VZqN4s"
+    },
+    {
+      "group": "transações",
+      "name": "O MC confirmou a composição e o gas foi pago pelo selo",
+      "ok": true,
+      "detail": "gas pago por bmz-d57a1390.testnet, ação feita como mc.bmz-d57a1390.testnet",
+      "link": "https://testnet.nearblocks.io/txns/EMvs9Q5mZgjxB2rj6e5TYSbFbNPAwt6R9BRkJ1rhcEfU"
+    },
+    {
+      "group": "transações",
+      "name": "O MC confirmou a gravação e o gas foi pago pelo selo",
+      "ok": true,
+      "detail": "gas pago por bmz-d57a1390.testnet, ação feita como mc.bmz-d57a1390.testnet",
+      "link": "https://testnet.nearblocks.io/txns/CFgh24X12YA6VNpeXubbPtBUw1TD43g6ZghvX1speUK6"
+    },
+    {
+      "group": "transações",
+      "name": "O beatmaker confirmou a composição e o gas foi pago pelo selo",
+      "ok": true,
+      "detail": "gas pago por bmz-d57a1390.testnet, ação feita como beat.bmz-d57a1390.testnet",
+      "link": "https://testnet.nearblocks.io/txns/5Zu5sGbqmLWhRfHBHpmWfyReQb8kJci7Qhx8S1xPhW5E"
+    },
+    {
+      "group": "transações",
+      "name": "O beatmaker confirmou a gravação e o gas foi pago pelo selo",
+      "ok": true,
+      "detail": "gas pago por bmz-d57a1390.testnet, ação feita como beat.bmz-d57a1390.testnet",
+      "link": "https://testnet.nearblocks.io/txns/2JJbfFBuCoS3nDfmDiR6sagn4A5CgxqXQLtUzHjtsHxp"
+    },
+    {
+      "group": "transações",
+      "name": "A distribuidora pagou 2.000000 USDC de teste na fatura PYXXX2600001:master",
+      "ok": true,
+      "detail": "batch_funded",
+      "link": "https://testnet.nearblocks.io/txns/J4P32ArXvYyS5uYZsWu6TeEGaP1jZTB5hZH7AvsPkbir"
+    },
+    {
+      "group": "transações",
+      "name": "A distribuidora pagou 1.000000 USDC de teste na fatura T0000000001:publishing_performance",
+      "ok": true,
+      "detail": "batch_funded",
+      "link": "https://testnet.nearblocks.io/txns/FCjJXYfkHcGURKNY9SPXe3KG1uZ7DbSkXPYPTA7iA1Dt"
+    },
+    {
+      "group": "transações",
+      "name": "O portão aprovou só o hash do lote m1",
+      "ok": true,
+      "detail": "batch_approved",
+      "link": "https://testnet.nearblocks.io/txns/emBkdKAYLUvDWuAgNapAJuBQ2x9vivCGpUCpgktH6au"
+    },
+    {
+      "group": "transações",
+      "name": "O portão aprovou só o hash do lote e1",
+      "ok": true,
+      "detail": "batch_approved",
+      "link": "https://testnet.nearblocks.io/txns/qhWFzKpZbyEvgPWSVVHe3UoBerQdCAXjmfnrsVYuLXF"
+    },
+    {
+      "group": "transações",
+      "name": "O lote m1 foi dividido e ficou o recibo BMZ1:m1",
+      "ok": true,
+      "detail": "receipt",
+      "link": "https://testnet.nearblocks.io/txns/7dgXgEhfxDFK2Muf1GqzY2ycFK4y1qcKXeDoB1qmrVcW"
+    },
+    {
+      "group": "transações",
+      "name": "O lote e1 foi dividido e ficou o recibo BMZ1:e1",
+      "ok": true,
+      "detail": "receipt",
+      "link": "https://testnet.nearblocks.io/txns/8WU7q4h9qoWuH9Nqt2nnmH3Pyg9GhwuztDjF7YLaYQL4"
+    },
+    {
+      "group": "ataques",
+      "name": "Uma conta fora da ficha tenta confirmar uma parte",
+      "ok": true,
+      "detail": "recusado: \"nada a confirmar\"",
+      "link": "https://testnet.nearblocks.io/txns/Ho2tpYU54HF5KRBFioumuZbRLg6dd6LReSfLf2GjZjqB"
+    },
+    {
+      "group": "ataques",
+      "name": "A distribuidora tenta registrar uma gravação",
+      "ok": true,
+      "detail": "recusado: \"só o selo\"",
+      "link": "https://testnet.nearblocks.io/txns/4zyLdRDXD7Z2MQidtYoB31gi7M7FoVhkMmmwYQFqNg41"
+    },
+    {
+      "group": "ataques",
+      "name": "O selo tenta reescrever o contrato-modelo publicado",
+      "ok": true,
+      "detail": "recusado: \"versão já publicada\"",
+      "link": "https://testnet.nearblocks.io/txns/7UGGUy4mbSL63WXffrXCvVJCQUNnS2YDQtnqFPVjRZiF"
+    },
+    {
+      "group": "ataques",
+      "name": "Alguém tenta pagar de novo o lote m1, já repassado",
+      "ok": true,
+      "detail": "recusado: \"lote não aprovado ou já pago\"",
+      "link": "https://testnet.nearblocks.io/txns/CKA5T2EwUtNeKTCQ2g3LssfpvW1oCKWeyWDrmsiUgea9"
+    },
+    {
+      "group": "ataques",
+      "name": "Uma conta finge ser o USDC para criar uma fatura sem dinheiro",
+      "ok": true,
+      "detail": "recusado: \"token não aceito\"",
+      "link": "https://testnet.nearblocks.io/txns/8juk4tvjJkkBxNst2phnBFCAusD3S6xULtZERcwqkRgr"
+    },
+    {
+      "group": "ataques",
+      "name": "Alguém tenta pagar o lote a1 antes do portão",
+      "ok": true,
+      "detail": "recusado: \"lote não aprovado ou já pago\"",
+      "link": "https://testnet.nearblocks.io/txns/9Ey8BuviNojeGqnNjs2bhJzk7Lde92NTFUeB3gy6JqG7"
+    },
+    {
+      "group": "ataques",
+      "name": "Uma conta que não é o portão tenta aprovar o lote a1",
+      "ok": true,
+      "detail": "recusado: \"só o portão ou o selo\"",
+      "link": "https://testnet.nearblocks.io/txns/7HJ1Va2ugducmDkGqYEKK8oDqdZh7YbifrpWUkBL5tjk"
+    },
+    {
+      "group": "ataques",
+      "name": "O portão tenta aprovar o lote a1 com outro hash",
+      "ok": true,
+      "detail": "recusado: \"hash diferente do lote recebido\"",
+      "link": "https://testnet.nearblocks.io/txns/GeuWYabjMouBwBCETX25p8AUGJY7RkmiFPLoKi9mm9jY"
+    },
+    {
+      "group": "ataques",
+      "name": "Fatura para um direito inexistente: o pagador recebe tudo de volta",
+      "ok": true,
+      "detail": "contrato recusou \"direito não existe\"; o token devolveu ao pagador",
+      "link": "https://testnet.nearblocks.io/txns/Cc7VDLnfBeZ1Cssz6GC4Es7XPXweGaAK1QGSNcdLMd1P"
+    },
+    {
+      "group": "lotes",
+      "name": "m1: hash recalculado do ledger = hash na rede",
+      "ok": true,
+      "detail": "9b891de68fdbd8dd7755d608c8e36115f4bb8dc5a33bbc1208e935595de791c5"
+    },
+    {
+      "group": "lotes",
+      "name": "m1: valor do ledger = valor pago",
+      "ok": true,
+      "detail": "2000000 micro-USDC"
+    },
+    {
+      "group": "lotes",
+      "name": "m1: status final",
+      "ok": true,
+      "detail": "Paid"
+    },
+    {
+      "group": "lotes",
+      "name": "e1: hash recalculado do ledger = hash na rede",
+      "ok": true,
+      "detail": "8a344dfc0bd0802bdc0020eb1961b613b80767c68b220abc43697fdf0788a252"
+    },
+    {
+      "group": "lotes",
+      "name": "e1: valor do ledger = valor pago",
+      "ok": true,
+      "detail": "1000000 micro-USDC"
+    },
+    {
+      "group": "lotes",
+      "name": "e1: status final",
+      "ok": true,
+      "detail": "Paid"
+    },
+    {
+      "group": "fórmula",
+      "name": "contrato-modelo marcado como teste",
+      "ok": true,
+      "detail": "master 4000 · autoral 2500 bps"
+    },
+    {
+      "group": "fórmula",
+      "name": "PYXXX2600001:master: pontos-base da rede = fórmula recalculada aqui",
+      "ok": true,
+      "detail": "40% · 42% · 18%"
+    },
+    {
+      "group": "fórmula",
+      "name": "T0000000001:publishing_performance: pontos-base da rede = fórmula recalculada aqui",
+      "ok": true,
+      "detail": "25% · 45% · 30%"
+    },
+    {
+      "group": "fórmula",
+      "name": "T0000000001:publishing_mechanical: pontos-base da rede = fórmula recalculada aqui",
+      "ok": true,
+      "detail": "25% · 45% · 30%"
+    },
+    {
+      "group": "fórmula",
+      "name": "conexo de produtor: 100% para o selo",
+      "ok": true
+    },
+    {
+      "group": "pagamentos",
+      "name": "m1: selo (EAS) (bmz-d57a1390.testnet) recebeu a parte certa",
+      "ok": true,
+      "detail": "0.8 USDC de teste",
+      "link": "https://testnet.nearblocks.io/txns/7dgXgEhfxDFK2Muf1GqzY2ycFK4y1qcKXeDoB1qmrVcW"
+    },
+    {
+      "group": "pagamentos",
+      "name": "m1: intérprete (mc.bmz-d57a1390.testnet) recebeu a parte certa",
+      "ok": true,
+      "detail": "0.84 USDC de teste",
+      "link": "https://testnet.nearblocks.io/txns/7dgXgEhfxDFK2Muf1GqzY2ycFK4y1qcKXeDoB1qmrVcW"
+    },
+    {
+      "group": "pagamentos",
+      "name": "m1: produtor musical (beat.bmz-d57a1390.testnet) recebeu a parte certa",
+      "ok": true,
+      "detail": "0.36 USDC de teste",
+      "link": "https://testnet.nearblocks.io/txns/7dgXgEhfxDFK2Muf1GqzY2ycFK4y1qcKXeDoB1qmrVcW"
+    },
+    {
+      "group": "pagamentos",
+      "name": "m1: soma paga = valor da fatura (nada sobra, nada falta)",
+      "ok": true,
+      "detail": "2 USDC de teste"
+    },
+    {
+      "group": "pagamentos",
+      "name": "e1: selo (EAS) (bmz-d57a1390.testnet) recebeu a parte certa",
+      "ok": true,
+      "detail": "0.25 USDC de teste",
+      "link": "https://testnet.nearblocks.io/txns/8WU7q4h9qoWuH9Nqt2nnmH3Pyg9GhwuztDjF7YLaYQL4"
+    },
+    {
+      "group": "pagamentos",
+      "name": "e1: letra (mc.bmz-d57a1390.testnet) recebeu a parte certa",
+      "ok": true,
+      "detail": "0.45 USDC de teste",
+      "link": "https://testnet.nearblocks.io/txns/8WU7q4h9qoWuH9Nqt2nnmH3Pyg9GhwuztDjF7YLaYQL4"
+    },
+    {
+      "group": "pagamentos",
+      "name": "e1: melodia (beat.bmz-d57a1390.testnet) recebeu a parte certa",
+      "ok": true,
+      "detail": "0.3 USDC de teste",
+      "link": "https://testnet.nearblocks.io/txns/8WU7q4h9qoWuH9Nqt2nnmH3Pyg9GhwuztDjF7YLaYQL4"
+    },
+    {
+      "group": "pagamentos",
+      "name": "e1: soma paga = valor da fatura (nada sobra, nada falta)",
+      "ok": true,
+      "detail": "1 USDC de teste"
+    },
+    {
+      "group": "pagamentos",
+      "name": "mc.bmz-d57a1390.testnet: nenhuma parte retida",
+      "ok": true
+    },
+    {
+      "group": "pagamentos",
+      "name": "beat.bmz-d57a1390.testnet: nenhuma parte retida",
+      "ok": true
+    }
+  ]
+}

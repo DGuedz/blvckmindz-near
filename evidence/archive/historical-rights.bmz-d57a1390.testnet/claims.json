@@ -1,0 +1,144 @@
+{
+  "_about": "Gerado pela demo: cada afirmação ligada à transação que a prova. Conferido por app/verify.mjs. Testnet, dados de amostra.",
+  "network": "testnet",
+  "contract": "rights.bmz-d57a1390.testnet",
+  "label": "bmz-d57a1390.testnet",
+  "claims": [
+    {
+      "id": "terms",
+      "claim": "O selo publicou o contrato-modelo de TESTE (master D=40%, autoral D=25%)",
+      "tx": "Ezwfp63Wo9qPMHamiLE985rCqoRwq3DSpeFiTnYDpB23",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "terms_published"
+      }
+    },
+    {
+      "id": "register_work",
+      "claim": "A composição (ISWC) foi registrada e virou dois tokens autorais",
+      "tx": "BujB6D9KxH9rHqHgjMF1E1vmLR6gyCPmb8LTi5CjvS5a",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "nft_mint"
+      }
+    },
+    {
+      "id": "register",
+      "claim": "A gravação (ISRC) foi registrada e virou dois tokens (master e conexo de produtor)",
+      "tx": "BeQjjTmJ1ovTBGyxL2dTyqdBpbCfSBintg72v3VZqN4s",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "nft_mint"
+      }
+    },
+    {
+      "id": "confirm_mc_iswc",
+      "claim": "O MC confirmou a composição e o gas foi pago pelo selo",
+      "tx": "EMvs9Q5mZgjxB2rj6e5TYSbFbNPAwt6R9BRkJ1rhcEfU",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "mc.bmz-d57a1390.testnet"
+      }
+    },
+    {
+      "id": "confirm_mc_isrc",
+      "claim": "O MC confirmou a gravação e o gas foi pago pelo selo",
+      "tx": "CFgh24X12YA6VNpeXubbPtBUw1TD43g6ZghvX1speUK6",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "mc.bmz-d57a1390.testnet"
+      }
+    },
+    {
+      "id": "confirm_beat_iswc",
+      "claim": "O beatmaker confirmou a composição e o gas foi pago pelo selo",
+      "tx": "5Zu5sGbqmLWhRfHBHpmWfyReQb8kJci7Qhx8S1xPhW5E",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "beat.bmz-d57a1390.testnet"
+      }
+    },
+    {
+      "id": "confirm_beat_isrc",
+      "claim": "O beatmaker confirmou a gravação e o gas foi pago pelo selo",
+      "tx": "2JJbfFBuCoS3nDfmDiR6sagn4A5CgxqXQLtUzHjtsHxp",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "share_confirmed",
+        "gasless_for": "beat.bmz-d57a1390.testnet"
+      }
+    },
+    {
+      "id": "pay_m1",
+      "claim": "A distribuidora pagou 2.000000 USDC de teste na fatura PYXXX2600001:master",
+      "tx": "J4P32ArXvYyS5uYZsWu6TeEGaP1jZTB5hZH7AvsPkbir",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "batch_funded"
+      }
+    },
+    {
+      "id": "pay_e1",
+      "claim": "A distribuidora pagou 1.000000 USDC de teste na fatura T0000000001:publishing_performance",
+      "tx": "FCjJXYfkHcGURKNY9SPXe3KG1uZ7DbSkXPYPTA7iA1Dt",
+      "signer": "distribuidora.bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "batch_funded"
+      }
+    },
+    {
+      "id": "gate_m1",
+      "claim": "O portão aprovou só o hash do lote m1",
+      "tx": "emBkdKAYLUvDWuAgNapAJuBQ2x9vivCGpUCpgktH6au",
+      "signer": "gate.bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "batch_approved"
+      }
+    },
+    {
+      "id": "gate_e1",
+      "claim": "O portão aprovou só o hash do lote e1",
+      "tx": "qhWFzKpZbyEvgPWSVVHe3UoBerQdCAXjmfnrsVYuLXF",
+      "signer": "gate.bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "batch_approved"
+      }
+    },
+    {
+      "id": "pay_out_m1",
+      "claim": "O lote m1 foi dividido e ficou o recibo BMZ1:m1",
+      "tx": "7dgXgEhfxDFK2Muf1GqzY2ycFK4y1qcKXeDoB1qmrVcW",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "receipt",
+        "batch": "m1"
+      }
+    },
+    {
+      "id": "pay_out_e1",
+      "claim": "O lote e1 foi dividido e ficou o recibo BMZ1:e1",
+      "tx": "8WU7q4h9qoWuH9Nqt2nnmH3Pyg9GhwuztDjF7YLaYQL4",
+      "signer": "bmz-d57a1390.testnet",
+      "expect": {
+        "success": true,
+        "event": "receipt",
+        "batch": "e1"
+      }
+    }
+  ]
+}

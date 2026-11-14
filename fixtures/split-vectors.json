@@ -1,0 +1,13 @@
+[
+  { "amount": "1000000", "bps": [6000, 4000], "remainder_index": 0, "shares": ["600000", "400000"] },
+  { "amount": "2000000", "bps": [5000, 3500, 1500], "remainder_index": 0, "shares": ["1000000", "700000", "300000"] },
+  { "amount": "1", "bps": [5000, 3500, 1500], "remainder_index": 0, "shares": ["1", "0", "0"] },
+  { "amount": "100", "bps": [3333, 3333, 3334], "remainder_index": 2, "shares": ["33", "33", "34"] },
+  { "amount": "1234567", "bps": [5000, 3500, 1500], "remainder_index": 1, "shares": ["617283", "432099", "185185"] },
+  { "amount": "18446744073709551615", "bps": [10000], "remainder_index": 0, "shares": ["18446744073709551615"] },
+  { "amount": "1000000", "bps": [], "remainder_index": 0, "error": "NoHolders" },
+  { "amount": "1000000", "bps": [5000, 4000], "remainder_index": 0, "error": "BpsSumNot10000" },
+  { "amount": "1000000", "bps": [10000, 0], "remainder_index": 0, "error": "ZeroBps" },
+  { "amount": "1000000", "bps": [1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1112], "remainder_index": 0, "error": "TooManyHolders" },
+  { "amount": "1000000", "bps": [10000], "remainder_index": 1, "error": "RemainderIndexOutOfRange" }
+]

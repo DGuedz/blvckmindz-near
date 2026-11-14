@@ -1,0 +1,7 @@
+target/
+node_modules/
+.env
+.env.*
+app/.keys/
+app/extrato.csv
+.DS_Store

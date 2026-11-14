@@ -1,0 +1,7 @@
+# AMOSTRA para a demo v2: valores fictícios em micro-USD. A coluna "code" é o ISRC (gravação) ou o ISWC (composição).
+batch_id,period,code,right,store,territory,amount_micro_usd
+m1,2026-10,PYXXX2600001,master,spotify,BR,1200000
+m1,2026-10,PYXXX2600001,master,apple_music,AR,500000
+m1,2026-10,PYXXX2600001,master,youtube,US,300000
+e1,2026-10,T0000000001,publishing_performance,radio,BR,800000
+e1,2026-10,T0000000001,publishing_performance,streaming,PY,200000

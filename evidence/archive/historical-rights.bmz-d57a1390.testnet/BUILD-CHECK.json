@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-14T01:12:38.665Z",
+  "network": "testnet",
+  "contract": "rights.bmz-d57a1390.testnet",
+  "block_height": 277588102,
+  "local_wasm_sha256": "d56d8cbb4195d28ab3299980d62e6b47dc0e9ef707525be81298b1d8f1f7da08",
+  "deployed_wasm_sha256": "08a12929b1b65f17fd4a7da89e6ae57eaaec21888511095fc5668da0e46c55ca",
+  "matches": false
+}

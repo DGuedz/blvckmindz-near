@@ -1,0 +1,6 @@
+# AMOSTRA para o demo: valores fictícios em micro-USD. Formato simplificado, não é o relatório oficial do LabelGrid.
+batch_id,period,isrc,right,store,territory,amount_micro_usd
+1,2026-09,PYXXX2600001,master,spotify,BR,1200000
+1,2026-09,PYXXX2600001,master,spotify,PY,350000
+1,2026-09,PYXXX2600001,master,apple_music,AR,250000
+1,2026-09,PYXXX2600001,master,youtube,US,200000

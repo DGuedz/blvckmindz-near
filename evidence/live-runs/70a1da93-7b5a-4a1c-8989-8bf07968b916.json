@@ -1,0 +1,103 @@
+{
+  "requestId": "70a1da93-7b5a-4a1c-8989-8bf07968b916",
+  "template": "publishing",
+  "status": "verified",
+  "step": "verifying",
+  "txs": [
+    {
+      "step": "reserving",
+      "hash": "Bf3egnuhwSDbGKWaigVpuqeFzwZrWhMw5kunf99HGwbB",
+      "signer": "bmz-718c08dd.testnet"
+    },
+    {
+      "step": "funding-test-payer",
+      "hash": "Am3goDkXgD1xaoz6TKZ2aXpqZpg3fLtTntTytiHrid3H",
+      "signer": "distribuidora.bmz-718c08dd.testnet"
+    },
+    {
+      "step": "funding-invoice",
+      "hash": "7M1sX7tBYuhKiLzpWGrz3efPU95VDwPMLninJYGYRU87",
+      "signer": "distribuidora.bmz-718c08dd.testnet"
+    },
+    {
+      "step": "approving-sample",
+      "hash": "2Czt9JWRu4qxiLf3tth7kgSL5uEkqH26XA877F2wtzrQ",
+      "signer": "gate.bmz-718c08dd.testnet"
+    },
+    {
+      "step": "distributing",
+      "hash": "9dj8oiNtBQdMSJXTx2io4j13iMMiAaEjZ9eAZSbGnW8U",
+      "signer": "bmz-718c08dd.testnet"
+    }
+  ],
+  "startedAt": "2026-11-14T10:37:52.189Z",
+  "network": "testnet",
+  "batchId": "demo-70a1da937b5a4a1c89898bf0",
+  "amount": "1000000",
+  "ledgerHash": "7a311c0b9ed7ec87c2acbcbb21296ff5b3d7b5702f77a04a5055b257dee6760a",
+  "ledger": [
+    {
+      "batchId": "demo-70a1da937b5a4a1c89898bf0",
+      "period": "2026-10",
+      "isrc": "T0000000001",
+      "right": "publishing_performance",
+      "store": "radio",
+      "territory": "BR",
+      "amount": "800000"
+    },
+    {
+      "batchId": "demo-70a1da937b5a4a1c89898bf0",
+      "period": "2026-10",
+      "isrc": "T0000000001",
+      "right": "publishing_performance",
+      "store": "streaming",
+      "territory": "PY",
+      "amount": "200000"
+    }
+  ],
+  "proof": {
+    "checkedAt": "2026-11-14T10:38:11.743Z",
+    "contract": "rights.bmz-718c08dd.testnet",
+    "batchId": "demo-70a1da937b5a4a1c89898bf0",
+    "tokenId": "T0000000001:publishing_performance",
+    "block": 277645574,
+    "tx": "9dj8oiNtBQdMSJXTx2io4j13iMMiAaEjZ9eAZSbGnW8U",
+    "amount": "1000000",
+    "rows": [
+      {
+        "account": "bmz-718c08dd.testnet",
+        "role": "selo (EAS)",
+        "bps": 2500,
+        "expected": "250000",
+        "actual": "250000",
+        "matched": true
+      },
+      {
+        "account": "mc.bmz-718c08dd.testnet",
+        "role": "letra",
+        "bps": 4500,
+        "expected": "450000",
+        "actual": "450000",
+        "matched": true
+      },
+      {
+        "account": "beat.bmz-718c08dd.testnet",
+        "role": "melodia",
+        "bps": 3000,
+        "expected": "300000",
+        "actual": "300000",
+        "matched": true
+      }
+    ],
+    "checks": {
+      "transaction": true,
+      "receipt": true,
+      "amounts": true,
+      "total": true,
+      "recipients": true
+    },
+    "matched": true,
+    "assetContract": "usdc.bmz-718c08dd.testnet"
+  },
+  "finishedAt": "2026-11-14T10:38:11.743Z"
+}

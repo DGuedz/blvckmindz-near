@@ -1,0 +1,112 @@
+{
+  "requestId": "cf8e3f4c-a56c-42db-afb3-c703e3ad6cf7",
+  "template": "master",
+  "status": "verified",
+  "step": "verifying",
+  "txs": [
+    {
+      "step": "reserving",
+      "hash": "7fKHs9P2YUuaSB1QRc6gRSCn6XfEKW9Sncw5ozsHPVQX",
+      "signer": "bmz-718c08dd.testnet"
+    },
+    {
+      "step": "funding-test-payer",
+      "hash": "4AVJXTfMPX5U14pCDMxhJan83DGpJM4NsADFAX5MDC7E",
+      "signer": "distribuidora.bmz-718c08dd.testnet"
+    },
+    {
+      "step": "funding-invoice",
+      "hash": "4mFrd69DXzR5Z6XB7BbFmiYry8nhVew4g9dXU8VkKWcF",
+      "signer": "distribuidora.bmz-718c08dd.testnet"
+    },
+    {
+      "step": "approving-sample",
+      "hash": "CxpmQsGHX1QdA5e8F4HBJKb9SGXfWg75swSnSXN8PFyj",
+      "signer": "gate.bmz-718c08dd.testnet"
+    },
+    {
+      "step": "distributing",
+      "hash": "81p1DC2gxBJedo7hk99pFNZDHP3C4BttVbgkHrPWJKGz",
+      "signer": "bmz-718c08dd.testnet"
+    }
+  ],
+  "startedAt": "2026-11-14T12:01:45.733Z",
+  "network": "testnet",
+  "batchId": "demo-cf8e3f4ca56c42dbafb3c703",
+  "amount": "2000000",
+  "ledgerHash": "180c70347a7855e3e001df62c62a88d0c1e772998314ee65567a0dcd840806e7",
+  "ledger": [
+    {
+      "batchId": "demo-cf8e3f4ca56c42dbafb3c703",
+      "period": "2026-10",
+      "isrc": "PYXXX2600001",
+      "right": "master",
+      "store": "spotify",
+      "territory": "BR",
+      "amount": "1200000"
+    },
+    {
+      "batchId": "demo-cf8e3f4ca56c42dbafb3c703",
+      "period": "2026-10",
+      "isrc": "PYXXX2600001",
+      "right": "master",
+      "store": "apple_music",
+      "territory": "AR",
+      "amount": "500000"
+    },
+    {
+      "batchId": "demo-cf8e3f4ca56c42dbafb3c703",
+      "period": "2026-10",
+      "isrc": "PYXXX2600001",
+      "right": "master",
+      "store": "youtube",
+      "territory": "US",
+      "amount": "300000"
+    }
+  ],
+  "proof": {
+    "checkedAt": "2026-11-14T12:02:04.567Z",
+    "contract": "rights.bmz-718c08dd.testnet",
+    "assetContract": "usdc.bmz-718c08dd.testnet",
+    "batchId": "demo-cf8e3f4ca56c42dbafb3c703",
+    "tokenId": "PYXXX2600001:master",
+    "block": 277654214,
+    "tx": "81p1DC2gxBJedo7hk99pFNZDHP3C4BttVbgkHrPWJKGz",
+    "amount": "2000000",
+    "rows": [
+      {
+        "account": "bmz-718c08dd.testnet",
+        "role": "selo (EAS)",
+        "bps": 4000,
+        "expected": "800000",
+        "actual": "800000",
+        "matched": true
+      },
+      {
+        "account": "mc.bmz-718c08dd.testnet",
+        "role": "intérprete",
+        "bps": 4200,
+        "expected": "840000",
+        "actual": "840000",
+        "matched": true
+      },
+      {
+        "account": "beat.bmz-718c08dd.testnet",
+        "role": "produtor musical",
+        "bps": 1800,
+        "expected": "360000",
+        "actual": "360000",
+        "matched": true
+      }
+    ],
+    "checks": {
+      "transaction": true,
+      "receipt": true,
+      "amounts": true,
+      "total": true,
+      "recipients": true
+    },
+    "matched": true
+  },
+  "finishedAt": "2026-11-14T12:02:04.568Z"
+}
