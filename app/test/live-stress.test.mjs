@@ -4,7 +4,7 @@ import { mkdtempSync, readFileSync, statSync, writeFileSync, unlinkSync, rmSync 
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { createRunStore, executeLiveSample } from '../live-demo.mjs';
+import { createRunStore, executeLiveSample, demoRunLimit } from '../live-demo.mjs';
 
 const contract='rights.fixture.testnet';
 const id=n=>`${n.toString(16).padStart(8,'0')}-1111-4111-8111-111111111111`;
@@ -24,6 +24,22 @@ async function settle(store,requestId) {
   }
   throw new Error('Fixture executor did not settle.');
 }
+
+test('operator capacity is bounded, strict and never accepted from a browser request',()=>{
+  assert.equal(demoRunLimit(),10);assert.equal(demoRunLimit('100'),100);assert.equal(demoRunLimit('1'),1);
+  for(const value of ['0','101','-1','1.5',' 10','10 ','001','Infinity','1e2',100,null])assert.throws(()=>demoRunLimit(value));
+});
+test('raising capacity preserves old receipts and applies the cap to the same durable book',async t=>{
+  const {store,directory}=fixture(t);
+  for(let n=1;n<=5;n++){store.start(body(n));await settle(store,id(n));}
+  const raised=createRunStore({directory,contract,limit:100,execute:async input=>passed(input)});
+  assert.equal(raised.info().remaining,95);assert.equal(raised.get(id(1)).status,'verified');
+  assert.equal(raised.start(body(1)).status,'verified');assert.equal(raised.info().remaining,95);
+  for(let n=6;n<=100;n++){raised.start(body(n));await settle(raised,id(n));}
+  assert.equal(raised.info().remaining,0);assert.throws(()=>raised.start(body(101)),/budget/);
+  assert.equal(Object.keys(JSON.parse(readFileSync(join(directory,'demo-runs.json'),'utf8')).runs).length,100);
+  assert.throws(()=>createRunStore({directory,contract,execute:async input=>passed(input),limit:101}));
+});
 
 test('fifty concurrent retries reuse one request; a second request never starts while it runs',async t=>{
   let executions=0,finish;

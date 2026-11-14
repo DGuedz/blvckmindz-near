@@ -10,7 +10,7 @@ Built for NEAR HACKATHON · primary track: Real-World Money. “Test USDC” is 
 
 Start with **Simulate split**; the motion explains the calculation without sending a transaction. **Distribute on testnet** creates the fixed test payment. Wait for verified recipient amounts, then open the receipt’s explorer link. Reloading or opening `?run=<UUID>` reads that run by GET and never sends another payment. Choose **New test** explicitly before starting a different run.
 
-The deployment has a shared limit of **ten runs**, across all visitors. Remaining capacity is shown in the interface. A connection failure preserves the run reference for recovery; it does not authorize another payment. [Short judge walkthrough](docs/demo.md).
+The deployment has a shared operator-configured run limit (default **10**, maximum **100**), across all visitors. Remaining capacity is shown in the interface. A connection failure preserves the run reference for recovery; it does not authorize another payment. [Short judge walkthrough](docs/demo.md).
 
 ## Run it, then check the transaction
 
@@ -80,7 +80,9 @@ Simulation playback is illustrative, driven by the calculated amounts; its clock
 
 The engine binds to 127.0.0.1. Public access additionally requires the explicit `--public-demo` opt-in alongside `--testnet-demo`. This deployment pins `NEAR_DEMO_PUBLIC_HOST` to the exact active Cloudflare tunnel hostname and `NEAR_DEMO_FRONTEND_ORIGIN` to `https://blvckmindz-near-demo.vercel.app`; incoming Host and Origin must match the configured access boundary. Vercel contains the public interface, shared calculation modules and selected public reports; signing remains on the Mac. `prepare-static-vercel.mjs` builds this explicit file set. The earlier `prepare-vercel.mjs` is the legacy proxy-only configuration.
 
-The service accepts fixed sample templates and recipients, checks both deployed builds and participant confirmations, and shares one ten-run budget. Duplicate request IDs reuse the saved run. Interrupted execution or failed evidence export blocks fresh payments for operator review. No general HTTP relayer is enabled. This is a bounded testnet demonstration, not a commercial payment service.
+Set `NEAR_DEMO_RUN_LIMIT=25` on the operator server for the reviewed public capacity. This preserves the existing run book and its receipts; it does not reset or repeat a payment. The server accepts an integer from 1 to 100, defaults to 10, and refuses invalid configuration. Check testnet gas funding before raising capacity.
+
+The service accepts fixed sample templates and recipients, checks both deployed builds and participant confirmations, and shares one durable run budget. Duplicate request IDs reuse the saved run. Interrupted execution or failed evidence export blocks fresh payments for operator review. No general HTTP relayer is enabled. This is a bounded testnet demonstration, not a commercial payment service.
 
 ## Recheck a run independently
 
@@ -105,7 +107,7 @@ The ISRC identifies a recording; the ISWC identifies a composition. The [five-fl
 
 [Review, error cases and captures](docs/audit-2026-11-14.md) · [Validation summary](evidence/VALIDATION.json) · [Public-file secret scan review](evidence/SECRET-REVIEW.json).
 
-- **104 application tests passed** in the latest validation. They cover split parity with the shared catalog/Rust vectors, integer money allocation, invalid inputs, trusted-token transfer proofs, fixed transaction scopes, receipt/motion state boundaries and read-only server behavior. Run `cd app && npm test`.
+- **106 application tests passed** in the latest validation. They cover split parity with the shared catalog/Rust vectors, integer money allocation, invalid inputs, trusted-token transfer proofs, fixed transaction scopes, receipt/motion state boundaries and read-only server behavior. Run `cd app && npm test`.
 - Contract suites can be run separately with `cargo test` at the repository root; sandbox execution/build prerequisites must be installed.
 - Earlier deployment proofs, including its 43-check report, remain in `evidence/archive/`. They do not validate the revised contract. Legacy CLI `verify` targets the separate canonical m1/e1 demo; use `verify:live` for browser-generated batches.
 - Only the label registers records and owns their tokens. The token contract implements NEP-171 mint events and partial views, without transfers. This does not establish legal ownership.

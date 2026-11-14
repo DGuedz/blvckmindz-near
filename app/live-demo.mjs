@@ -71,8 +71,14 @@ export async function executeLiveSample({ state, templateId, requestId, send, re
   return {network:'testnet',requestId,template:templateId,batchId,amount:String(amount),ledgerHash,ledger:rows.map(r=>({...r,amount:String(r.amount)})),txs,proof,status:'verified'};
 }
 
+export function demoRunLimit(value) {
+  if(value===undefined)return 10;
+  if(typeof value!=='string'||!/^(?:[1-9]\d?|100)$/.test(value))throw new Error('Demo run limit must be an integer from 1 to 100.');
+  return Number(value);
+}
 export async function createLiveDemo(state) {
   assertTestnetState(state);
+  const limit=demoRunLimit(process.env.NEAR_DEMO_RUN_LIMIT);
   const checkBuild=()=>checkDeploymentBuild({rpcUrl:RPC_URL,contracts:[
     {accountId:state.accounts.registry,wasmPath:join(ROOT,'target/near/track_account/track_account.wasm')},
     {accountId:state.accounts.usdc,wasmPath:join(ROOT,'target/near/test_usdc/test_usdc.wasm')},
@@ -85,7 +91,7 @@ export async function createLiveDemo(state) {
     if(!right?.test_terms || right.holders?.length!==3 || !right.holders.every(h=>h.confirmed))throw new Error('Register and confirm the fixed samples before enabling testnet transactions.');
   }
   const send=(who,contractId,methodName,args,gas,deposit)=>account(state,who).signAndSendTransaction({receiverId:contractId,actions:[actions.functionCall(methodName,args,gas,deposit)]});
-  return createRunStore({directory:KEYS,contract:state.accounts.registry,
+  return createRunStore({directory:KEYS,contract:state.accounts.registry,limit,
     execute:(input,onStep)=>executeLiveSample({state,templateId:input.template,requestId:input.requestId,send,checkBuild,onStep}),
     publish:(run)=>publishLiveRun(ROOT,run),
   });
@@ -94,7 +100,7 @@ export async function createLiveDemo(state) {
 // Disk snapshots and an exclusive lock coordinate independent local server processes.
 // Only public run metadata is stored here; signing remains outside this controller.
 export function createRunStore({directory,contract,execute,publish=()=>{},limit=10}) {
-  if(typeof directory!=='string'||typeof contract!=='string'||!contract.endsWith('.testnet')||typeof execute!=='function'||!Number.isInteger(limit)||limit<1||limit>10)throw new Error('Invalid local demo store.');
+  if(typeof directory!=='string'||typeof contract!=='string'||!contract.endsWith('.testnet')||typeof execute!=='function'||!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Invalid local demo store.');
   mkdirSync(directory,{recursive:true,mode:0o700});
   const file=join(directory,'demo-runs.json'),lock=join(directory,'demo-run.lock');
   function readBook() {
@@ -141,7 +147,7 @@ export function createRunStore({directory,contract,execute,publish=()=>{},limit=
       const repeated=book.runs[input.requestId];
       if(repeated) {release();if(repeated.template!==input.template)throw new Error('Request ID belongs to another template.');return repeated;}
       if(Object.values(book.runs).some(run=>run.status==='running'||requiresReview(run))) {release();throw new Error('An interrupted run needs operator review.');}
-      if(Object.keys(book.runs).length>=limit) {release();throw new Error('The ten-run test budget is exhausted.');}
+      if(Object.keys(book.runs).length>=limit) {release();throw new Error('The configured test budget is exhausted.');}
       const run={...input,network:'testnet',status:'running',step:'checking',txs:[],startedAt:new Date().toISOString()};
       book.runs[input.requestId]=run;save(book);
       Promise.resolve().then(()=>execute(input,(step,details={})=>{Object.assign(run,{step},details);save(book);}))

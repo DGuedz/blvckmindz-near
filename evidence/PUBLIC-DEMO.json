@@ -5,10 +5,11 @@
   "hosting": "Static public UI and recorded report on Vercel; API -> temporary Cloudflare tunnel -> operator Mac Node process",
   "independentOfOperatorMac": false,
   "keysUploadedToVercel": false,
-  "globalSampleRunLimit": 10,
+  "globalSampleRunLimit": 25,
   "newPayoutOnReceiptRead": false,
   "staticUiIndependentOfOperatorMac": true,
   "newExecutionsIndependentOfOperatorMac": false,
   "deploymentId": "dpl_FvZuyVhurM912yoSm3sA4Js7g7y3",
-  "deployedPublicFileCount": 23
+  "deployedPublicFileCount": 23,
+  "preservesExistingRunBook": true
 }

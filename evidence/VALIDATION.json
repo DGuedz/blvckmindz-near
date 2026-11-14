@@ -4,7 +4,7 @@
   "scope": "Fixed-sample demo journey, payment proof, recovery, concurrency, HTTP policy and responsive UI",
   "applicationTests": {
     "command": "cd app && npm test",
-    "passed": 104,
+    "passed": 106,
     "failed": 0
   },
   "localStress": {
@@ -28,5 +28,7 @@
   "crossChainSettlementImplemented": false,
   "commercialSettlementProven": false,
   "staticUiIndependentOfOperatorMac": true,
-  "duplicateRejectedOriginalRequestId": "76cd07e4-95f0-4477-8a79-becaacf31538"
+  "duplicateRejectedOriginalRequestId": "76cd07e4-95f0-4477-8a79-becaacf31538",
+  "operatorCapacityMaximum": 100,
+  "configuredPublicCapacity": 25
 }
