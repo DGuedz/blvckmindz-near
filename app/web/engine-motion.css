@@ -6,6 +6,12 @@
 .text-action{display:block;background:transparent;border:0;color:var(--bone-300);font-size:12px;min-height:32px;padding:4px 0;font-weight:500;text-decoration:underline;text-underline-offset:4px}
 .journey-next{margin-top:12px}
 .journey-next button{width:100%;text-align:left;font-size:14px;min-height:48px}
+.journey-next button{background:transparent;color:var(--bone-50);border-color:var(--line)}
+/* One primary action for the current step; preserve existing handlers and disabled states. */
+.engine-card:has(.split-motion[data-mode=simulation][data-complete=true]):has(#liveRun:enabled) #runSample,
+.engine-card:has(.split-motion[data-mode=live][data-complete=true]):has(#liveRun:enabled) #runSample{background:transparent;color:var(--bone-50);border-color:var(--line)}
+.engine-card:has(.split-motion[data-mode=simulation][data-complete=true]) #liveRun:enabled,
+.engine-card:has(.split-motion[data-mode=live][data-complete=true]) #liveRun:enabled{background:var(--signal);color:var(--ink);border-color:var(--signal)}
 .journey-next p{font-size:11px;color:var(--bone-300);line-height:1.5;margin:7px 0 0}
 .run-recovery{border-left:2px solid var(--signal);padding:0 0 0 12px;margin-top:15px}
 .run-recovery p{font-size:12px;line-height:1.5}
