@@ -28,7 +28,7 @@ The reviewed browser-triggered run distributed 2.00 test USDC:
 | Artist | 0.84 | 0.84 |
 | Beatmaker | 0.36 | 0.36 |
 
-The final static-UI deployment also created a fresh payment: [open its transaction](https://testnet.nearblocks.io/txns/DphFTW1XiokxpqEvUcUATWvkgBvtxqa35CfdbbJ6VvFk), [run data](evidence/live-runs/90adb516-89b8-4662-98c2-5993fc39d62c.json).
+The November 14 static-UI deployment also created a fresh payment: [open its transaction](https://testnet.nearblocks.io/txns/DphFTW1XiokxpqEvUcUATWvkgBvtxqa35CfdbbJ6VvFk), [run data](evidence/live-runs/90adb516-89b8-4662-98c2-5993fc39d62c.json).
 
 [Open the payout](https://testnet.nearblocks.io/txns/7PcqjVbV9qbAbVucrvvwDNTZVNwCrNnY2vdCe7uXPcLW). [Reproducible run data](evidence/live-runs/76cd07e4-95f0-4477-8a79-becaacf31538.json). [Latest run report](evidence/LATEST-RUN.md).
 

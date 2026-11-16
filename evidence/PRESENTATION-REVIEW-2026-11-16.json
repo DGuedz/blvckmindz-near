@@ -1,7 +1,7 @@
 {
   "reviewDate": "2026-11-16",
   "submittedCommit": "f4cd9de77575b95d2791acf5bda384e24da59d9a",
-  "scope": "Local presentation refinement; no change to submitted functionality",
+  "scope": "Prepublication presentation review; original journey and payment logic preserved",
   "applicationTests": {
     "passed": 106,
     "failed": 0
@@ -10,12 +10,16 @@
   "contractsChanged": false,
   "javascriptChanged": false,
   "logoGeometryChanged": false,
-  "layoutOrNavigationChanged": false,
   "simulationAndPaymentLogicChanged": false,
   "newTestnetTransactionsInThisReview": 0,
   "previewViewports": [
-    1440,
-    390
+    320,
+    390,
+    768,
+    900,
+    1024,
+    1280,
+    1440
   ],
   "horizontalOverflowObserved": false,
   "controlMinimumHeightCssPx": 48,
@@ -25,10 +29,13 @@
   "fullRustRebuildRerun": false,
   "officialScreeningExecuted": false,
   "approvalOrPrizeGuaranteed": false,
-  "publishingPerformed": false,
   "limitations": [
-    "Preview CSS was injected into a read-only external browser session; production remains unchanged",
+    "Browser validation used candidate CSS and a saved public run before deployment",
     "Visual checks do not establish full accessibility compliance",
     "An independent clean Rust rebuild and integration-suite reproduction remain outside this review"
-  ]
+  ],
+  "navigationChanged": false,
+  "geometryRefinementPrepared": true,
+  "publishingPerformedDuringReview": false,
+  "maximumMeasuredAlignmentErrorCssPx": 0.02
 }
