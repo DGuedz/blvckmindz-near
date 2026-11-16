@@ -1,0 +1,21 @@
+{
+  "blvckMindz": "Canonical app/web/assets/logo.svg, source outlines preserved",
+  "near": "https://github.com/near/docs/blob/master/assets/logo_rev.svg",
+  "fonts": [
+    "Chomsky OFL (brand)",
+    "Anton OFL (cover headlines)",
+    "Inter Tight OFL (interface and captions)"
+  ],
+  "dimensions": [
+    1200,
+    630
+  ],
+  "amounts": "Verified testnet sample, not commercial revenue",
+  "sourceAssetSha256": {
+    "near": "5015467656320a693045da4e6c2e72dc880bd474e8584122ea8144feedf0ecdc",
+    "blvckMindz": "4cd7c1c420042471678147966eca5e349c0322b2aa5d284bac1ede083fa5e6b1"
+  },
+  "icons": {
+    "play": "https://github.com/lucide-icons/lucide/blob/main/icons/play.svg"
+  }
+}

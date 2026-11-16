@@ -1,3 +1,5 @@
+[![BLVCK MINDZ and NEAR: Know your share. Check your payment. Testnet demonstration.](docs/assets/readme-cover.png)](https://blvckmindz-near-demo.vercel.app/)
+
 # BLVCK MINDZ × NEAR
 
 A participant sheet becomes a payment split. [Open the public demo](https://blvckmindz-near-demo.vercel.app/), simulate the allocation, then distribute the fixed sample on NEAR testnet and inspect its own payout hash.
@@ -6,7 +8,7 @@ Built for NEAR HACKATHON · primary track: Real-World Money. “Test USDC” is 
 
 ## Public demo
 
-[blvckmindz-near-demo.vercel.app](https://blvckmindz-near-demo.vercel.app/) hosts the interface and a recorded payment report directly on Vercel. New testnet executions use an API proxy through a Cloudflare tunnel to the bounded engine on the founder’s Mac. **The Mac process and tunnel must remain online for new payments and saved-run recovery.** Local simulation and the recorded report remain available independently of the tunnel.
+[blvckmindz-near-demo.vercel.app](https://blvckmindz-near-demo.vercel.app/) hosts the interface and a recorded payment report directly on Vercel. New testnet executions use Vercel’s API proxy to a bounded engine on a Hostinger VPS. The engine runs under a dedicated service user with resource limits, persistent run history and automatic restart on failure. The demo no longer depends on the founder’s Mac or a temporary tunnel. This is a single-server testnet deployment, not a high-availability commercial service.
 
 Start with **Simulate split**; the motion explains the calculation without sending a transaction. **Distribute on testnet** creates the fixed test payment. Wait for verified recipient amounts, then open the receipt’s explorer link. Reloading or opening `?run=<UUID>` reads that run by GET and never sends another payment. Choose **New test** explicitly before starting a different run.
 
@@ -15,6 +17,8 @@ The deployment has a shared operator-configured run limit (default **10**, maxim
 ## Run it, then check the transaction
 
 The corrected contract is deployed at [`rights.bmz-718c08dd.testnet`](https://testnet.nearblocks.io/address/rights.bmz-718c08dd.testnet). The rights and project test-token WASMs are checked against their deployed bytecode: [build check](evidence/BUILD-CHECK.json).
+
+Hosting was migrated on November 15, after submission, with the application logic and deployed WASMs unchanged. A fresh browser-triggered run confirmed the same three transfers: [open the saved receipt](https://blvckmindz-near-demo.vercel.app/?run=b19d4dcf-c5fb-4f06-8a6d-52820cd78cd7), [transaction](https://testnet.nearblocks.io/txns/ENAa7vja5ruQ5kR7B9WfhXnYYcFGtupKkapvjMFuxYYu), [public run data](evidence/live-runs/b19d4dcf-c5fb-4f06-8a6d-52820cd78cd7.json). Reloading the receipt recovered the same run without another payment.
 
 The reviewed browser-triggered run distributed 2.00 test USDC:
 
@@ -78,7 +82,7 @@ Open the page and press **Distribute on testnet**. This reserves a new batch, pr
 
 Simulation playback is illustrative, driven by the calculated amounts; its clock never advances a live payment. Reduced-motion mode shows the completed local calculation immediately. No animation can turn a submitted hash or `Paid` state alone into a verified receipt.
 
-The engine binds to 127.0.0.1. Public access additionally requires the explicit `--public-demo` opt-in alongside `--testnet-demo`. This deployment pins `NEAR_DEMO_PUBLIC_HOST` to the exact active Cloudflare tunnel hostname and `NEAR_DEMO_FRONTEND_ORIGIN` to `https://blvckmindz-near-demo.vercel.app`; incoming Host and Origin must match the configured access boundary. Vercel contains the public interface, shared calculation modules and selected public reports; signing remains on the Mac. `prepare-static-vercel.mjs` builds this explicit file set. The earlier `prepare-vercel.mjs` is the legacy proxy-only configuration.
+The engine binds to 127.0.0.1. Public access additionally requires the explicit `--public-demo` opt-in alongside `--testnet-demo`. The hosting proxy preserves the legacy internal Host pin expected by the submitted code; it does not connect through the former tunnel. `NEAR_DEMO_FRONTEND_ORIGIN` stays pinned to `https://blvckmindz-near-demo.vercel.app`. Vercel contains the public interface, shared calculation modules and selected public reports; isolated testnet signing state stays on the VPS, outside the repository. The former local engine is disabled to prevent two active writers. `prepare-static-vercel.mjs` builds this explicit file set. The earlier `prepare-vercel.mjs` is the legacy proxy-only configuration.
 
 Set `NEAR_DEMO_RUN_LIMIT=25` on the operator server for the reviewed public capacity. This preserves the existing run book and its receipts; it does not reset or repeat a payment. The server accepts an integer from 1 to 100, defaults to 10, and refuses invalid configuration. Check testnet gas funding before raising capacity.
 

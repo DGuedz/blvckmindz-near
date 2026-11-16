@@ -18,7 +18,7 @@ Simulation uses timed motion to explain a local calculation. Live stages follow 
 
 ## Hosting and capacity
 
-The interface and a recorded payment report are static files on Vercel. New executions and saved-run recovery use Vercel’s API proxy → Cloudflare tunnel → engine on the founder’s Mac. The engine and tunnel must stay online for those operations; local simulation and the recorded report remain available without them. Public access uses explicit `--testnet-demo --public-demo` startup with the exact tunnel Host and Vercel Origin pinned. This is temporary hosting for the bounded demonstration.
+The interface and a recorded payment report are static files on Vercel. New executions and saved-run recovery use Vercel’s API proxy to the isolated demo service on a Hostinger VPS. The Mac and former temporary tunnel are no longer required. The submitted application keeps its explicit testnet/public startup and pinned frontend-origin boundary. Service users, resource limits and persistent private state separate the demonstration from other applications on the same server; the server itself remains shared.
 
 All visitors share one operator-configured run budget. The default is ten; this public run uses a total cap of 25, preserving earlier runs. The interface shows availability; opening a receipt consumes no new run. Interrupted execution or evidence-export failure requires operator review before fresh payments. The read-only local mode cannot sign.
 
