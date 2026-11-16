@@ -2,6 +2,8 @@
 
 # BLVCK MINDZ × NEAR
 
+[BLVCK MINDZ website](https://blckmndzlbs.com/) · [Interactive NEAR testnet demo](https://blvckmindz-near-demo.vercel.app/) · [Source code](https://github.com/DGuedz/blvckmindz-near)
+
 A participant sheet becomes a payment split. [Open the public demo](https://blvckmindz-near-demo.vercel.app/), simulate the allocation, then distribute the fixed sample on NEAR testnet and inspect its own payout hash.
 
 Built for NEAR HACKATHON · primary track: Real-World Money. “Test USDC” is a project-issued token, not Circle USDC. Sample agreements and valueless test tokens only; no commercial payment, legal ownership determination or collecting-society submission is demonstrated.
