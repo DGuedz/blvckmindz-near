@@ -2,7 +2,7 @@
 
 # BLVCK MINDZ × NEAR
 
-[BLVCK MINDZ website](https://blckmndzlbs.com/) · [Interactive NEAR testnet demo](https://blvckmindz-near-demo.vercel.app/) · [Source code](https://github.com/DGuedz/blvckmindz-near)
+[BLVCK MINDZ website](https://blckmndzlbs.com/) · [Interactive NEAR testnet demo](https://blvckmindz-near-demo.vercel.app/) · [Docs](https://blvckmindz-near-demo.vercel.app/docs/) · [Source code](https://github.com/DGuedz/blvckmindz-near)
 
 A participant sheet becomes a payment split. [Open the public demo](https://blvckmindz-near-demo.vercel.app/), simulate the allocation, then distribute the fixed sample on NEAR testnet and inspect its own payout hash.
 
