@@ -11,7 +11,7 @@ export const PUBLIC_UI_FILES=Object.freeze([
   ...['csv.mjs','statement.mjs','split-engine.mjs','templates.mjs'].map(n=>[`app/${n}`,n]),
   ...['logo.svg','usdc-coin.webp','anton.woff2','inter-tight.woff2','Anton-OFL.txt','Inter-Tight-OFL.txt','NOTICES.md'].map(n=>[`app/web/assets/${n}`,`assets/${n}`]),
   ['evidence/provas.html','provas.html'],
-  ...['index.html','quickstart.html','rights.html','execution.html','verification.html','architecture.html','limits.html','docs.css'].map(n=>[`app/web/docs/${n}`,`docs/${n}`]),
+  ...['index.html','product.html','interoperability.html','quickstart.html','rights.html','execution.html','verification.html','architecture.html','limits.html','docs.css'].map(n=>[`app/web/docs/${n}`,`docs/${n}`]),
   ['evidence/solana-reference.json','evidence/solana-reference.json'],
   ['evidence/live-runs/76cd07e4-95f0-4477-8a79-becaacf31538.json','evidence/live-runs/76cd07e4-95f0-4477-8a79-becaacf31538.json'],
   ['evidence/protection/76cd07e4-95f0-4477-8a79-becaacf31538.json','evidence/protection/76cd07e4-95f0-4477-8a79-becaacf31538.json'],
@@ -24,7 +24,7 @@ export function staticVercelConfig(origin) {
     {src:'/api/(.*)',dest:upstream.replace('/$1','/api/$1'),headers:{'x-vercel-enable-rewrite-caching':'0'}},
     {src:'/provas',dest:'/provas.html'},
     {src:'/docs/?',dest:'/docs/index.html'},
-    ...['quickstart','rights','execution','verification','architecture','limits'].map(n=>({src:`/docs/${n}/?`,dest:`/docs/${n}.html`})),
+    ...['product','interoperability','quickstart','rights','execution','verification','architecture','limits'].map(n=>({src:`/docs/${n}/?`,dest:`/docs/${n}.html`})),
     {handle:'filesystem'},
   ]};
 }

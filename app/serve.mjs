@@ -33,8 +33,8 @@ function publishedRun(template) {
     .sort((a,b)=>String(b.finishedAt).localeCompare(String(a.finishedAt)))[0]??null;
 }
 const publicFiles = new Map([
-  ...['index.html','quickstart.html','rights.html','execution.html','verification.html','architecture.html','limits.html','docs.css'].map(n=>[`/docs/${n}`,[`web/docs/${n}`,n.endsWith('.css')?'text/css; charset=utf-8':'text/html; charset=utf-8']]),
-  ...['','quickstart','rights','execution','verification','architecture','limits'].flatMap(n=>[n?`/docs/${n}`:'/docs',n?`/docs/${n}/`:'/docs/'].map(url=>[url,[`web/docs/${n||'index'}.html`,'text/html; charset=utf-8']])),
+  ...['index.html','product.html','interoperability.html','quickstart.html','rights.html','execution.html','verification.html','architecture.html','limits.html','docs.css'].map(n=>[`/docs/${n}`,[`web/docs/${n}`,n.endsWith('.css')?'text/css; charset=utf-8':'text/html; charset=utf-8']]),
+  ...['','product','interoperability','quickstart','rights','execution','verification','architecture','limits'].flatMap(n=>[n?`/docs/${n}`:'/docs',n?`/docs/${n}/`:'/docs/'].map(url=>[url,[`web/docs/${n||'index'}.html`,'text/html; charset=utf-8']])),
   ['/demo.css', ['web/demo.css', 'text/css; charset=utf-8']],
   ['/engine-motion.css', ['web/engine-motion.css', 'text/css; charset=utf-8']],
   ['/demo.mjs', ['web/demo.mjs', 'text/javascript; charset=utf-8']],
